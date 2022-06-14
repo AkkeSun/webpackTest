@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--
+     npm run buildDev : 개발용
+     npm run buildProd : 배포용 (min file)
+     /static/js/out 에 build 된 하나의 js 파일이 생성된다
+     -->
+    <script src="/dist/index.js"></script>
+</head>
+
+<body>
+    <!-- 모듈에 의해 데이터가 입력된다 -->
+    <div id="mod1" class="myNameA"></div>
+    <div id="mod2" class="myNameB"></div>
+
+    <!-- 모듈에서 전역객채로 설정한 함수를 library명.함수명() 으로 접근 -->
+    <button onclick="common.clickFunc1()">btn1</button>
+    <button onclick="common.clickFunc2()">btn2</button>
+    <button onclick="clickFunc3()">btn3</button>
+</body>
+
+<script>
+    function clickFunc3() {
+        <!-- 모듈에서 전역객채로 설정한 함수를 library명.함수명() 으로 접근 -->
+        let data = common.myData();
+        alert(data);
+    }
+</script>
+
+</html>
